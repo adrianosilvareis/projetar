@@ -18,7 +18,7 @@ require('_app/Config.inc.php');
 
         <div id="login">
             <div class="boxin">
-                <h1>Intranet Tommasi</h1>
+                <h1>Projetar ADM</h1>
 
                 <?php
                 $login = new Login(5);
@@ -30,7 +30,7 @@ require('_app/Config.inc.php');
                     if (!$login->getResult()):
                         WSErro($login->getError()[0], $login->getError()[1]);
                     else:
-                        header('Location: ' . HOME);
+                        header('Location: ' . HOME . '/admin/painel.php');
                     endif;
 
                 endif;

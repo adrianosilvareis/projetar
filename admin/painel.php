@@ -39,30 +39,8 @@ endif;
         <link rel="stylesheet" href="css/admin.css" />
         <link rel="stylesheet" href="css/default.css" />  
 
-        <?php if (!PRODUCAO): ?>
-            <link rel="stylesheet" href="../_lib/angular/css/ng-animation.css" />
-            <script src='../_app/Config.inc.js.php'></script>
-            <script src="../_lib/angular.min.js"></script>
-            <script src="../_lib/angular/angular-route.min.js"></script>
-            <script src="../_lib/angular/angular-animate.min.js"></script>
-            <script src="../_lib/jquery.min.js"></script>
-            <script src="../_lib/jquery/jmask.min.js"></script>
-            <script src="../_lib/cdn/combo.js"></script>
-            <script src="../js/angular/services/objetoAPI.module.js"></script>
-            <script src="../js/angular/services/objetoAPI.services.js"></script>
-            <script src="../js/angular/filterDefault/filter.module.js"></script>
-            <script src="../js/angular/filterDefault/dateBr.filter.js"></script>
-            <script src="../js/angular/filterDefault/timestampBr.filter.js"></script>
-            <script src="../js/angular/uiFormat/uiFormat.module.js"></script>
-            <script src="../js/angular/uiFormat/uiTimestampBr.directive.js"></script>
-        <?php else: ?>
-            <link rel="stylesheet" href="../css/ng-animation.min.css" />
-            <script src="../js/lib.min.js"></script>
-            <script src="../js/all.min.js"></script>
-            <script src="../cdn/combo.js"></script>
-            <script src='../_app/Config.inc.js.php'></script>
-        <?php endif; ?>
-
+        <script src="../lib/jquery/dist/jquery.min.js"></script>
+        <script src="../lib/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
         <script src="__jsc/tiny_mce/tiny_mce.js"></script>
         <script src="__jsc/tiny_mce/plugins/tinybrowser/tb_tinymce.js.php"></script>
         <script src="__jsc/admin.js"></script>
@@ -106,20 +84,6 @@ endif;
                             <ul class="sub">
                                 <li><a href="painel.php?exe=categories/create">Criar Categoria</a></li>
                                 <li><a href="painel.php?exe=categories/index">Listar / Editar Categorias</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="li<?php if (in_array('setor', $linkto)) echo ' active'; ?>"><a class="opensub" onclick="return false;" href="#">Setor</a>
-                            <ul class="sub">
-                                <li><a href="painel.php?exe=setor/create">Criar Setor</a></li>
-                                <li><a href="painel.php?exe=setor/index">Listar / Editar Setor</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="li<?php if (in_array('setor_type', $linkto)) echo ' active'; ?>"><a class="opensub" onclick="return false;" href="#">Tipo de Setor</a>
-                            <ul class="sub">
-                                <li><a href="painel.php?exe=setor_type/create">Criar Tipo</a></li>
-                                <li><a href="painel.php?exe=setor_type/index">Listar / Editar Tipo</a></li>
                             </ul>
                         </li>
 
