@@ -37,10 +37,9 @@
                     <span class="field">Tipo:</span>
                     <select name="post_type">
                         <option value="" > Selecione um tipo: </option>
-                        <option value="membros"> Membros </option>
-                        <option value="links"> Links </option>
-                        <option value="grupos"> Grupos </option>
-                        <option value="posts"> Geral </option>
+                        <option value="pequeno"> Pequeno </option>
+                        <option value="medio"> Médio </option>
+                        <option value="grande"> Grande </option>
                     </select>
                 </label>
             </div>
