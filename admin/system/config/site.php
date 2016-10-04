@@ -45,14 +45,14 @@
                 <span class="field">Descrição:</span>
                 <textarea class="js_editor" name="site_content" rows="10"><?php if (isset($config['site_content'])) echo htmlspecialchars($config['site_content']); ?></textarea>
             </label>
-            <?= var_dump($config); ?>
+            
             <div class="label_line">
 
                 <label class="label_small">
                     <span class="field">Template:</span>
                     <select>
                         <option value="null">Selecione um template</option>
-                        <option value="default" <?= ($config['site_template'] == 'default' ? 'selected' : '') ?>>Principal</option>
+                        <option value="default" <?= ($config['site_template'] == 'default' ? 'selected' : '') ?>>Default</option>
                     </select>
                 </label>
 

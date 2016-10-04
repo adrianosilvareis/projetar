@@ -1,26 +1,56 @@
 <?php
 
-//DEFINE IDENTIDADE DO SITE ####################
-define('SITENAME', 'Projetar');
-define('SITEDESC', 'Projetar comunicação integrada');
-
-//DEFINE A HOME DO SITE #########################
-$SERVER = filter_input_array(INPUT_SERVER, FILTER_DEFAULT);
-define('DOCUMENT_ROOT', $SERVER['DOCUMENT_ROOT']);
-define('NAME', '/projetar');
-define('BASEDIR', DOCUMENT_ROOT . NAME);
-define('HTTP_HOST', 'http://' . $SERVER['HTTP_HOST']);
-define('HOME', HTTP_HOST . NAME);
-define('THEME', 'projetar');
-define('REQUIRE_PATH', 'themes' . '/' . THEME);
-define('INCLUDE_PATH', HOME . DIRECTORY_SEPARATOR . REQUIRE_PATH);
-define('PRODUCAO', FALSE);
-
 //CONFIGURACAO DO BANCO ####################
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "root");
 define("DB_NAME", "ws_projetar");
+
+//TRATAMENTO DE ERROS #####################
+//CSS Constantes :: Mensagens de Erro
+define("WS_ACCEPT", 'accept');
+define("WS_INFOR", 'infor');
+define("WS_ALERT", 'alerte');
+define("WS_ERROR", 'error');
+
+$Site = new WsSiteConfig();
+$Site->Execute()->findAll();
+
+//DEFINE IDENTIDADE DO SITE ####################
+if (!$Site->Execute()->getResult()):
+    define('SITENAME', 'Projetar');
+    define('SITEDESC', 'Projetar comunicação integrada');
+    define('NAME', '/projetar');
+    define('THEME', 'default');
+    define('SITECOVER', "/themes/" . THEME . "/img/logo.gif&h=150");
+    
+    
+else:
+    $SiteConfig = $Site->Execute()->getResult()[0];    
+    define('SITENAME', $SiteConfig->site_title);
+    define('SITEDESC', $SiteConfig->site_content);
+    define('NAME', '/' . $SiteConfig->site_name);
+    define('THEME', $SiteConfig->site_template);
+    define('SITECOVER', "/uploads/" . $SiteConfig->site_cover);
+endif;
+
+
+
+
+//DEFINE A HOME DO SITE #########################
+$SERVER = filter_input_array(INPUT_SERVER, FILTER_DEFAULT);
+define('DOCUMENT_ROOT', $SERVER['DOCUMENT_ROOT']);
+define('BASEDIR', DOCUMENT_ROOT . NAME);
+define('HTTP_HOST', 'http://' . $SERVER['HTTP_HOST']);
+define('HOME', HTTP_HOST . NAME);
+define('REQUIRE_PATH', 'themes' . '/' . THEME);
+define('INCLUDE_PATH', HOME . DIRECTORY_SEPARATOR . REQUIRE_PATH);
+define('PRODUCAO', FALSE);
+
+//REDES SOCIAIS
+define('CANAL', 'UCG1S-LQV55pl0-n_KLTNtJQ');
+define('FACEBOOK', 'adriano.reis23');
+define('TWITTER', 'Adriano_EngPro');
 
 //DEFINE SERVIDOR DE E-MAIL ####################
 define('MAILUSER', 'adriano@tommasi.com.br');
@@ -36,18 +66,6 @@ define("FTP_HOST", "192.168.0.50");
 define("FTP_USER", "ftp");
 define("FTP_PASS", "kr@p2605");
 define("FTP_HOME", HOME . "/ftp");
-
-//REDES SOCIAIS
-define('CANAL', 'UCG1S-LQV55pl0-n_KLTNtJQ');
-define('FACEBOOK', 'adriano.reis23');
-define('TWITTER', 'Adriano_EngPro');
-
-//TRATAMENTO DE ERROS #####################
-//CSS Constantes :: Mensagens de Erro
-define("WS_ACCEPT", 'accept'); 
-define("WS_INFOR", 'infor');
-define("WS_ALERT", 'alerte');
-define("WS_ERROR", 'error');
 
 //AUTO LOAD DE CLASSES ####################
 function __autoload($Class_name) {
