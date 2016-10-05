@@ -1,56 +1,17 @@
 <?php
-$WsPosts = new WsPosts();
+//require 'pages/default.page.php';
 
-$View = new View();
-$article_p = $View->Load("article_p");
-$article_m = $View->Load("article_m");
-$article_g = $View->Load("article_g");
+require 'pages/destaque.page.php';
 
-foreach ($AllCategories as $cat):
-    extract((array) $cat);
-    ?>
-    <section class="section" id="<?= $category_name ?>">
-        <div class="container">
+require 'pages/servicos.page.php';
 
-            <div class="row">
-                <h1><?= $category_title; ?></h1>
+require 'inc/contato.inc.php';
 
-                <?php
-                $WsPosts->Execute()->Query("(post_category = :cat or post_cat_parent = :cat) AND post_status = '1' ORDER BY post_type", ":cat={$category_id}");
+require 'pages/equipe.page.php';
 
-                $i = 0;
-                $j = 0;
-                foreach ($WsPosts->Execute()->getResult() as $post):
-                    $post->datetime = date('Y-m-d', strtotime($post->post_date));
-                    $post->pubdate = date("d/m/Y H:i", strtotime($post->post_date));
-                    $post->post_content = Check::Words($post->post_content, 30);
-                    if (!$post->post_url):
-                        $post->post_url = "#HOME#/artigo/$post->post_name";
-                    endif;
-                    if ($post->post_type === 'grande'):
-                        $View->Show((array) $post, $article_g);
-                    elseif ($post->post_type === 'medio'):
-                        if ($i === 0)
-                            echo "</div><div class='row'>";
-                        $View->Show((array) $post, $article_m);
-                        $i++;
-                    else:
-                        if ($j === 0)
-                            echo "</div><div class='row'>";
-                        $View->Show((array) $post, $article_p);
-                        $j++;
-                    endif;
+require 'pages/depo_cliente.page.php';
 
-                endforeach;
-                ?>
-            </div>
-        </div>
-    </section>
-    <?php
-endforeach;
+require 'pages/clientes.page.php';
 
-//require 'pages/novidade.page.php';
-//require 'pages/comida.page.php';
-//require 'pages/lugares.page.php';
-require 'pages/contato.page.php';
-require 'pages/subscribe.page.php';
+//require 'pages/contato.page.php';
+?>

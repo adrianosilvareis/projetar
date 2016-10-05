@@ -67,25 +67,25 @@
                     <span class="field">Tipo:</span>
                     <select name="post_type">
                         <option value="" > Selecione um tipo: </option>
-                        <option value="membros" <?php
-                        if ($post['post_type'] == "membros"): echo "selected=\"selected\" ";
+                        <option value="destaque" <?php
+                        if ($post['post_type'] == "destaque"): echo "selected=\"selected\" ";
                         endif;
-                        ?>> Membros </option>
+                        ?>> Destaque </option>
 
-                        <option value="links" <?php
-                        if ($post['post_type'] == "links"): echo "selected=\"selected\" ";
+                        <option value="pequeno" <?php
+                        if ($post['post_type'] == "pequeno"): echo "selected=\"selected\" ";
                         endif;
-                        ?>> Links </option>
+                        ?>> Pequeno </option>
 
-                        <option value="grupos" <?php
-                        if ($post['post_type'] == "grupos"): echo "selected=\"selected\" ";
+                        <option value="medio" <?php
+                        if ($post['post_type'] == "medio"): echo "selected=\"selected\" ";
                         endif;
-                        ?>> Grupos </option>
+                        ?>> Medio </option>
 
-                        <option value="posts" <?php
-                        if ($post['post_type'] == "posts"): echo "selected=\"selected\" ";
+                        <option value="grande" <?php
+                        if ($post['post_type'] == "grande"): echo "selected=\"selected\" ";
                         endif;
-                        ?>> Geral </option>
+                        ?>> Grande </option>
                     </select>
                 </label>
             </div>

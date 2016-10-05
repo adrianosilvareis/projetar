@@ -37,6 +37,7 @@
                     <span class="field">Tipo:</span>
                     <select name="post_type">
                         <option value="" > Selecione um tipo: </option>
+                        <option value="destaque"> Destaque </option>
                         <option value="pequeno"> Pequeno </option>
                         <option value="medio"> Médio </option>
                         <option value="grande"> Grande </option>

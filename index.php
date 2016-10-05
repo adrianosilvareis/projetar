@@ -35,15 +35,11 @@ $Session = new Session;
         require(REQUIRE_PATH . '/inc/header.inc.php');
         ?>
 
-        <div class="section">
-            <div class="container container-mobile">
-                <?php
-                if (!require($Link->getPatch())):
-                    WSErro('Erro ao incluir arquivo de navegação!', WS_ERROR, true);
-                endif;
-                ?>
-            </div>
-        </div>
+        <?php
+        if (!require($Link->getPatch())):
+            WSErro('Erro ao incluir arquivo de navegação!', WS_ERROR, true);
+        endif;
+        ?>
 
         <?php
         require(REQUIRE_PATH . '/inc/footer.inc.php');
