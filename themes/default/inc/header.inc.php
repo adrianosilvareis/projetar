@@ -3,7 +3,7 @@ $location = (count($Link->getLocal()) > 1 ? HOME . '/' : FALSE);
 $login = new Login(5);
 ?>
 
-<div class="section">
+<div class="section" style="margin: 0;padding: 0; font-size: 0;">
     <h1 id="home" style="margin: 0;padding: 0; font-size: 0;">
         <?= SITENAME ?>
         <a title="<?= SITENAME ?>" href="<?= HOME ?>">
@@ -22,23 +22,35 @@ $login = new Login(5);
                 <li>
                     <a href="<?= $location; ?>#home">Home</a>
                 </li>
-
-                <?php
-                $AllCategories = Check::CatParentByName("menu-1");
-                if (!$location):
-                    foreach ($AllCategories as $value) :
-                        extract((array) $value);
-                        ?>
-                        <li><a href="#<?= $category_name; ?>"><?= $category_title; ?></a></li>
-                        <?php
-                    endforeach;
-                endif;
-                ?>
-
+                
+                <li>
+                    <a href="<?= $location; ?>#servicos">Serviços</a>
+                </li>
+                
+                <li>
+                    <a href="<?= $location; ?>#clientes">Clientes</a>
+                </li>
+                
+                <li>
+                    <a href="<?= $location; ?>#">Blog</a>
+                </li>
+                
                 <li>
                     <a href="<?= $location; ?>#contato">Contato</a>
                 </li>
-
+                
+                <?php
+//                $AllCategories = Check::CatParentByName("menu-1");
+//                if (!$location):
+//                    foreach ($AllCategories as $value) :
+//                        extract((array) $value);
+                ?>
+                        <!--<li><a href="#//////<?= $category_name; ?>"><?= $category_title; ?></a></li>-->
+                <?php
+//                    endforeach;
+//                endif;
+                ?>
+                
                 <li>
                     <a href="/projetar/admin">Log In</a>
                 </li>

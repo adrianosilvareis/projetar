@@ -326,6 +326,7 @@ class Seo {
     rel='stylesheet' type='text/css'>\n";
         $this->seoLibs .= "<link href='http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css'
     rel='stylesheet' type='text/css'>\n";
+        $this->seoLibs .= "<link href='" . HOME . "/css/default.css' rel='stylesheet' type='text/css'>\n";
         
         
     

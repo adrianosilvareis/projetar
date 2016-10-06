@@ -5,9 +5,9 @@ require 'pages/destaque.page.php';
 
 require 'pages/servicos.page.php';
 
-require 'inc/contato.inc.php';
+require 'pages/contato.page.php';
 
-require 'pages/equipe.page.php';
+//require 'pages/equipe.page.php';
 
 require 'pages/depo_cliente.page.php';
 

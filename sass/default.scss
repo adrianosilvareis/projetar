@@ -1,0 +1,26 @@
+.client_content .row:last-child .client{
+    border-bottom-style: none;
+}
+
+.client{
+    padding: 15px;
+    background-color: #ffffff;
+    border-color: #e5e5e5;
+    border-width: 1px;
+    border-style: solid;
+    margin: 0 autopx;
+    border-top-style: none;
+    border-left-style: none;
+    
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.client:hover{
+    -webkit-filter: none;
+    filter: none;
+}
+
+.client:last-child{
+    border-right-style: none;
+}

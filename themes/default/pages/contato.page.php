@@ -7,7 +7,15 @@
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
                         <div class="col-sm-2">
-                            <label for="inputEmail3" class="control-label">Email</label>
+                            <label class="control-label">Seu nome (obrigatório)</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nome completo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label class="control-label">Seu e-mail (obrigatório)</label>
                         </div>
                         <div class="col-sm-10">
                             <input type="email" class="form-control" placeholder="Email">
@@ -15,7 +23,15 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-2">
-                            <label for="inputPassword3" class="control-label">Mensagem</label>
+                            <label class="control-label">Assunto</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" placeholder="Assunto da mensagem">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label class="control-label">Sua mensagem</label>
                         </div>
                         <div class="col-sm-10">
                             <textarea class="form-control" rows="3" placeholder="Deixe sua mensagem"></textarea>
