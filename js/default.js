@@ -2,13 +2,21 @@ $(document).ready(function () {
 
     $(function () {
         var nav = $('#menuHeader');
+        var logo = $('#logo');
+        
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 150) {
+            if ($(this).scrollTop() > 25) {
                 nav.addClass("navbar-fixed-top");
                 nav.removeClass("navbar-static-top");
+                
+                logo.addClass("logo_small");
+                logo.removeClass("logo_big");
             } else {
                 nav.addClass("navbar-static-top");
                 nav.removeClass("navbar-fixed-top");
+                
+                logo.addClass("logo_big");
+                logo.removeClass("logo_small");
             }
         });
     });

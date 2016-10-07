@@ -9,9 +9,9 @@ if ($WsPosts->Execute()->getResult()):
     extract((array) $Post);
     ?>
 
-    <div class = "section">
+    <div class="section" style="padding: 0;">
         <img src="<?= $post_cover; ?>" title="<?= $post_title; ?>" alt="<?= $post_content; ?>"
-             class = "img-responsive">
+             class="img-responsive">
     </div>
 
 <?php endif; ?>
