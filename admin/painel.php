@@ -87,7 +87,7 @@ endif;
                             </ul>
                         </li>
 
-                        <li class="li<?php if (in_array('config', $linkto)) echo ' active'; ?>"><a class="opensub" href="painel.php?exe=config/site">Configuração</a>                        </li>
+                        <li class="li<?php if (in_array('config', $linkto)) echo ' active'; ?>"><a class="opensub" href="painel.php?exe=config/site">Configuração</a></li>
 
                         <!-- adicionar novas categorias aqui-->
 
